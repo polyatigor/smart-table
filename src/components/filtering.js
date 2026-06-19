@@ -1,11 +1,7 @@
-import {createComparison} from "../lib/compare.js";
+import {createComparison, deafultRules} from "../lib/compare.js";
 
 // @todo: #4.3 — настроить компаратор
-const compare = createComparison([
-    'skipNonExistentSourceFields', 
-    'skipEmptyTargetValues',       
-    'stringIncludes'                  
-]);
+const compare = createComparison(deafultRules);
 
 export function initFiltering(elements, indexes) {
     // @todo: #4.1 — заполнить выпадающие списки опциями
