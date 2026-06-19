@@ -31,7 +31,8 @@ function collectState() {
     return {
         ...state,
         rowsPerPage,
-        page
+        page,
+        total: [state.totalFrom, state.totalTo] 
     };
 }
 /**
