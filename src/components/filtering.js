@@ -11,6 +11,14 @@ export function initFiltering(elements) {
     }
 
     const applyFiltering = (query, state, action) => {
+        if (action && action.name === 'clear') {
+            const input = action.parentElement.querySelector('input');
+            if (input) {
+                input.value = '';
+                state[input.name] = '';
+            }
+        }
+
         const filter = {};
         Object.keys(elements).forEach(key => {
             if (elements[key]) {
